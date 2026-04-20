@@ -393,7 +393,7 @@ function Dashboard({ user }: any) {
                                 <strong>{invite.name}</strong>
                                 <p className="text-sm">{invite.email}</p>
                                 <p className="text-xs text-blue-600">
-                                    /register/{invite.token}
+                                    {window.location.origin}/register/{invite.token}
                                 </p>
                             </div>
                         ))}
