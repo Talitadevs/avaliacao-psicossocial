@@ -14,6 +14,10 @@ function Dashboard({ user }: any) {
     const [inviteEmail, setInviteEmail] = useState('')
     const [inviteRole, setInviteRole] = useState('user')
     const [invites, setInvites] = useState<any[]>([])
+    const BASE_URL =
+        import.meta.env.DEV
+            ? 'http://localhost:5173'
+            : 'https://avaliacao-psicossocial-lilac.vercel.app'
 
     useEffect(() => {
         loadProfile();
@@ -393,7 +397,7 @@ function Dashboard({ user }: any) {
                                 <strong>{invite.name}</strong>
                                 <p className="text-sm">{invite.email}</p>
                                 <p className="text-xs text-blue-600">
-                                    {window.location.origin}/register/{invite.token}
+                                    {BASE_URL}/register/{invite.token}
                                 </p>
                             </div>
                         ))}
